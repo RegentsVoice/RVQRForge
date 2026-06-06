@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>QR Forge</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0e' rx='12'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='Courier New, monospace' font-weight='800' font-size='38' fill='%23ff8c42'%3EQR%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+</head>
+<body>
+<div class="app">
+    <div class="brand">
+        <h1><span class="accent">R</span><span class="light">EGENT'S</span> <span class="accent">V</span><span class="light">OICE</span> <span class="small">// QR FORGE</span></h1>
+    </div>
+
+    <div class="workspace">
+        <div class="settings">
+            <div class="ctrl-group">
+                <div class="group-title">ДАННЫЕ</div>
+                <label>ТЕКСТ ИЛИ ССЫЛКА</label>
+                <input type="text" id="qrText" value="https://regentsvoice.ru" placeholder="введите текст или URL...">
+            </div>
+
+            <div class="ctrl-group">
+                <div class="group-title">ДИЗАЙН QR</div>
+                <div class="row-flex">
+                    <div style="flex:1"><label>ЦВЕТ КОДА</label><input type="color" id="qrColor" value="#ff8c42"></div>
+                    <div style="flex:1"><label>ФОН</label><input type="color" id="bgColor" value="#000000"></div>
+                </div>
+                
+                <label>РАЗМЕР (px)</label>
+                <div class="slider-row">
+                    <input type="range" id="qrSize" min="200" max="1200" step="10" value="400">
+                    <span id="sizeValue" class="value-badge">400px</span>
+                </div>
+
+                <label>ОТСТУП (margin)</label>
+                <div class="slider-row">
+                    <input type="range" id="qrMargin" min="1" max="20" step="1" value="4">
+                    <span id="marginValue" class="value-badge">4</span>
+                </div>
+
+                <label>СКРУГЛЕНИЕ УГЛОВ (px)</label>
+                <div class="slider-row">
+                    <input type="range" id="cornerRadius" min="0" max="80" step="1" value="20">
+                    <span id="radiusValue" class="value-badge">20px</span>
+                </div>
+            </div>
+
+            <div class="ctrl-group">
+                <div class="group-title">ПОДПИСЬ</div>
+                <label>ТЕКСТ ПОД QR</label>
+                <input type="text" id="captionText" value="REGENT'S VOICE // QR" placeholder="например: SERIAL #001">
+                <div class="row-flex">
+                    <div style="flex:1"><label>ЦВЕТ</label><input type="color" id="captionColor" value="#ffaa77"></div>
+                    <div style="flex:1"><label>РАЗМЕР (px)</label>
+                        <div class="slider-row">
+                            <input type="range" id="captionSize" min="10" max="30" step="1" value="14">
+                            <span id="captionSizeValue" class="value-badge">14px</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ctrl-group">
+                <div class="group-title">ЭФФЕКТЫ</div>
+                <label>ИНТЕНСИВНОСТЬ ШУМА</label>
+                <div class="slider-row">
+                    <input type="range" id="noiseIntensity" min="0" max="1" step="0.01" value="0.08">
+                    <span id="noiseValue" class="value-badge">0.08</span>
+                </div>
+                <label>НАЛОЖЕНИЕ ПЛЁНКИ</label>
+                <select id="filmEffect">
+                    <option value="none">НЕТ</option>
+                    <option value="grain">ЗЕРНО</option>
+                    <option value="scanlines">СКАНИРОВАНИЕ</option>
+                    <option value="vintage" selected>ВИНТАЖ (помятость)</option>
+                </select>
+            </div>
+
+            <button id="generateBtn" class="btn-download">СГЕНЕРИРОВАТЬ</button>
+            <button id="exportBtn" class="btn-download" style="margin-top:0.5rem;">ЭКСПОРТ PNG</button>
+        </div>
+
+        <div class="preview">
+            <div class="canvas-wrap">
+                <canvas id="qrCanvas" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
