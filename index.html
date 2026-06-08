@@ -13,7 +13,6 @@
     <div class="brand">
         <h1><span class="accent">R</span><span class="light">EGENT'S</span> <span class="accent">V</span><span class="light">OICE</span> <span class="small">// QR FORGE</span></h1>
     </div>
-
     <div class="workspace">
         <div class="settings">
             <div class="ctrl-group">
@@ -21,33 +20,28 @@
                 <label>ТЕКСТ ИЛИ ССЫЛКА</label>
                 <input type="text" id="qrText" value="https://regentsvoice.ru" placeholder="введите текст или URL...">
             </div>
-
             <div class="ctrl-group">
                 <div class="group-title">ДИЗАЙН QR</div>
                 <div class="row-flex">
                     <div style="flex:1"><label>ЦВЕТ КОДА</label><input type="color" id="qrColor" value="#ff8c42"></div>
                     <div style="flex:1"><label>ФОН</label><input type="color" id="bgColor" value="#000000"></div>
                 </div>
-                
                 <label>РАЗМЕР (px)</label>
                 <div class="slider-row">
                     <input type="range" id="qrSize" min="200" max="1200" step="10" value="400">
                     <span id="sizeValue" class="value-badge">400px</span>
                 </div>
-
                 <label>ОТСТУП (margin)</label>
                 <div class="slider-row">
                     <input type="range" id="qrMargin" min="1" max="20" step="1" value="4">
                     <span id="marginValue" class="value-badge">4</span>
                 </div>
-
                 <label>СКРУГЛЕНИЕ УГЛОВ (px)</label>
                 <div class="slider-row">
                     <input type="range" id="cornerRadius" min="0" max="80" step="1" value="20">
                     <span id="radiusValue" class="value-badge">20px</span>
                 </div>
             </div>
-
             <div class="ctrl-group">
                 <div class="group-title">ПОДПИСЬ</div>
                 <label>ТЕКСТ ПОД QR</label>
@@ -62,7 +56,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="ctrl-group">
                 <div class="group-title">ЭФФЕКТЫ</div>
                 <label>ИНТЕНСИВНОСТЬ ШУМА</label>
@@ -78,11 +71,9 @@
                     <option value="vintage" selected>ВИНТАЖ (помятость)</option>
                 </select>
             </div>
-
             <button id="generateBtn" class="btn-download">СГЕНЕРИРОВАТЬ</button>
             <button id="exportBtn" class="btn-download" style="margin-top:0.5rem;">ЭКСПОРТ PNG</button>
         </div>
-
         <div class="preview">
             <div class="canvas-wrap">
                 <canvas id="qrCanvas" width="400" height="400"></canvas>
@@ -90,7 +81,6 @@
         </div>
     </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
